@@ -194,7 +194,7 @@
 			</event>
 			<event handle="members-reset-password" submit-value="Passwort speichern">
 				<messages>
-					<success><p>Das neue Passwort wurde erfolgreich gespeichert.</p></success>
+					<success><p>Das neue Passwort wurde erfolgreich gespeichert. Sie sind nun eingeloggt.</p></success>
 					<error><p>Probleme sind aufgetreten.</p></error>
 				</messages>
 			</event>
