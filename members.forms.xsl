@@ -15,7 +15,6 @@
 <!-- Changing anything below this line is at your own risk. -->
 
 <xsl:variable name="config" select="exsl:node-set($members-config)"/>
-<xsl:param name="url-code"/>
 
 <xsl:template name="members:input">
 	<xsl:param name="type" select="'text'"/>
