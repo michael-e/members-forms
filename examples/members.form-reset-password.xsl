@@ -37,6 +37,7 @@
 		</xsl:call-template>
 		<xsl:call-template name="members:input-submit">
 			<xsl:with-param name="event" select="$event"/>
+			<xsl:with-param name="redirect" select="substring-before($current-url, '?')"/>
 		</xsl:call-template>
 	</form>
 
