@@ -45,10 +45,10 @@
 					<login>Password <small>(<a href="/members/forgot-password/">Forgot Password?</a>)</small></login>
 				</label>
 				<errors>
-					<password type="missing" message="Passwort is a required field."/>
-					<password type="invalid" message="Passwort is too short. It must be at least 6 characters."/>
-					<password type="invalid" message="Passwort is not strong enough."/>
-					<password type="invalid" message="Invalid Passwort."/>
+					<password type="missing" message="Password is a required field."/>
+					<password type="invalid" message="Password is too short. It must be at least 6 characters."/>
+					<password type="invalid" message="Password is not strong enough."/>
+					<password type="invalid" message="Invalid Password."/>
 				</errors>
 			</field>
 			<field type="password-confirm">
@@ -57,21 +57,21 @@
 					<edit>Confirm New Password</edit>
 				</label>
 				<errors>
-					<password type="invalid" message="Passwort confirmation does not match."/>
-					<password type="invalid" message="Passwort is too short. It must be at least 6 characters."/>
-					<password type="invalid" message="Passwort is not strong enough."/>
+					<password type="invalid" message="Password confirmation does not match."/>
+					<password type="invalid" message="Password is too short. It must be at least 6 characters."/>
+					<password type="invalid" message="Password is not strong enough."/>
 				</errors>
 			</field>
 			<field type="recovery-code">
 				<label>Recovery Code</label>
 				<errors>
-					<password type="invalid" message="No recovery code found.">The Recovery Code was invalid or has expired.</passwort>
+					<password type="invalid" message="No recovery code found.">The password recovery code was invalid or has expired.</passwort>
 				</errors>
 			</field>
 			<field type="activation" handle="activation">
 				<label>Activation Code</label>
 				<errors>
-					<activation type="missing" message="Aktivierung is a required field."/>
+					<activation type="missing" message="Activation Code is a required field."/>
 					<activation type="invalid" message="Activation error. Code was invalid or has expired."/>
 					<activation type="invalid" message="Member is already activated."/>
 					<activation type="invalid" message="Member is not activated."/>
@@ -92,12 +92,12 @@
 			<event handle="members-new" submit-value="Register">
 				<messages>
 					<success><p>Registration was successful.</p></success>
-					<error><p>Problems occured.</p></error>
+					<error><p>Problems occurred during registration.</p></error>
 				</messages>
 				<filter handle="etm-members-send-activation-code">
 					<messages>
-						<success><p>An Email has been sent. Should you not receive it in the next couple of minutes, please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></success>
-						<error><p>There were problems during email sending. Please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></error>
+						<success><p>An email has been sent. If you do not receive it in the next couple of minutes, please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></success>
+						<error><p>There was a problem sending your registration email. Please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></error>
 					</messages>
 				</filter>
 				<filter handle="permission">
@@ -109,8 +109,8 @@
 			</event>
 			<event handle="members-edit" submit-value="Save">
 				<messages>
-					<success><p>Account data have been saved.</p></success>
-					<error><p>Problems occured.</p></error>
+					<success><p>Your account has been saved.</p></success>
+					<error><p>Problems occurred while saving your account.</p></error>
 				</messages>
 				<filter handle="permission">
 					<messages>
@@ -122,42 +122,42 @@
 			<event handle="members-activate-account" submit-value="Activate Account">
 				<messages>
 					<success><p>Activation was successful.</p></success>
-					<error><p>Problems occured.</p></error>
+					<error><p>Problems occurred while activating your account.</p></error>
 				</messages>
 				<filter handle="etm-members-account-activated">
 					<messages>
-						<success><p>An Email has been sent. Should you not receive it in the next couple of minutes, please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></success>
-						<error><p>There were problems during email sending. Please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></error>
+						<success><p>An email has been sent. If you do not receive it in the next couple of minutes, please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></success>
+						<error><p>There was a problem sending your activation email. Please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></error>
 					</messages>
 				</filter>
 			</event>
 			<event handle="members-regenerate-activation-code" submit-value="Request Activation Code">
 				<messages>
 					<success><p>A new activation code has been created.</p></success>
-					<error><p>Problems occured.</p></error>
+					<error><p>Problems occurred while generating your activation code.</p></error>
 				</messages>
 				<filter handle="etm-members-resend-activation-code">
 					<messages>
-						<success><p>An Email has been sent. Should you not receive it in the next couple of minutes, please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></success>
-						<error><p>There were problems during email sending. Please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></error>
+						<success><p>An email has been sent. If you do not receive it in the next couple of minutes, please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></success>
+						<error><p>There was a problem sending your activation email. Please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></error>
 					</messages>
 				</filter>
 			</event>
-			<event handle="member-login-info" submit-value="Anmelden">
+			<event handle="member-login-info" submit-value="Log in">
 				<messages>
 					<success><p>You are logged in.</p></success>
-					<error><p>Problems occured.</p></error>
+					<error><p>Problems occurred while trying to log you in.</p></error>
 				</messages>
 			</event>
 			<event handle="members-generate-recovery-code" submit-value="Request Recovery Code">
 				<messages>
-					<success><p>A Recovery Code has been created which allows to set a new password.</p></success>
-					<error><p>Problems occured.</p></error>
+					<success><p>A recovery code has been created which allows you to set a new password.</p></success>
+					<error><p>Problems occurred while creating your recovery code.</p></error>
 				</messages>
 				<filter handle="etm-members-send-recovery-code">
 					<messages>
-						<success><p>An Email has been sent. Should you not receive it in the next couple of minutes, please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></success>
-						<error><p>There were problems during email sending. Please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></error>
+						<success><p>An email has been sent. If you do not receive it in the next couple of minutes, please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></success>
+						<error><p>There was a problem sending your recovery code email. Please inform the webmaster at <a href="mailto:webmaster@example.com">webmaster@example.com</a>.</p></error>
 					</messages>
 				</filter>
 			</event>
@@ -170,7 +170,7 @@
 						be rendered.
 					-->
 					<success><p>Your new password has been saved successfully, and you have been logged in.</p></success>
-					<error><p>Problems occured.</p></error>
+					<error><p>Problems occurred while saving your new password.</p></error>
 				</messages>
 			</event>
 		</events>

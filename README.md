@@ -16,7 +16,7 @@ You should know how a members system basically works. If you have no idea, pleas
 
 Members Forms deals with the following challenges:
 
-- Many different event (error) messages make rendering form elements and messages on the frontend complicated. (Some generic error messages will even be output in <error/> nodes instead of field name nodes).
+- Many different event (error) messages make rendering form elements and messages on the frontend complicated. (Some generic error messages will even be output in `<error/>` nodes instead of field name nodes).
 - Members provides a "pseudo event" called `member-login-info`.
 - Special fields like `password`/`password-confirm`/`recovery-code` or the `identity` field need special solutions regarding field names and event XML messages alike.
 
@@ -32,7 +32,7 @@ Included are seven `members.form-...` utilities which simply call named template
 
 ## Download
 
-Members Forms can be downloaded from Github: http://github.com/michael-e/member-forms
+Members Forms can be downloaded from Github: <http://github.com/michael-e/member-forms>
 
 
 ## Quick Start
@@ -75,7 +75,7 @@ If you look at the example files (the English configuration file and the German 
 
 **Please read those configuration files in order to understand what Members Forms is supposed to do.**
 
-All Symphony events will render event messages in XML using Symphony's system language. This is why you will need a configuration file which fits to your system language. (You may, however, include field level messages in several languages into a single configuration file, so nothing will happen when the system language wll be switched. Please take a look at the provided German configuration file `members.config.de.xsl` to see how this works).
+All Symphony events will render event messages in XML using Symphony's system language. This is why you will need a configuration file which fits to your system language. (You may, however, include field level messages in several languages into a single configuration file, so nothing will happen when the system language will be switched. Please take a look at the provided German configuration file `members.config.de.xsl` to see how this works).
 
 Basically you will configure:
 
@@ -101,7 +101,7 @@ Localization/customization of error messages in validation summaries can be done
 
 	<username type="missing" message="USERNAME is a required field.">You should tell us your username. (<a href="http://en.wikipedia.org/wiki/Username">What is a username?</a>)</username>
 
-Nodenames and error messages must reflect your field's label! So if the username field in your Members section is called "Name of the User", the field configuration must look like this:
+Node names and error messages must reflect your field's label! So if the username field in your Members section is called "Name of the User", the field configuration must look like this:
 
 	<field type="username" handle="name-of-the-user">
 		<label>Your Username</label>

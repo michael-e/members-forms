@@ -14,15 +14,15 @@
 
 <!-- Changing anything below this line is at your own risk. -->
 
-<xsl:variable name="config" select="exsl:node-set($members-config)"/>
+<xsl:variable name="members:config" select="exsl:node-set($members-config)"/>
 
 <xsl:template name="members:input">
 	<xsl:param name="type" select="'text'"/>
 	<xsl:param name="event"/>
 	<xsl:param name="value"/>
 	<xsl:param name="field"/>
-	<xsl:param name="field-label" select="$config/data/fields/field[@type=$field]/label"/>
-	<xsl:param name="field-handle" select="$config/data/fields/field[@type=$field]/@handle"/>
+	<xsl:param name="field-label" select="$members:config/data/fields/field[@type=$field]/label"/>
+	<xsl:param name="field-handle" select="$members:config/data/fields/field[@type=$field]/@handle"/>
 	<xsl:param name="id" select="concat('fields-', $field-handle)"/>
 	<xsl:param name="name" select="concat('fields[', $field-handle, ']')"/>
 	<xsl:param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$field-handle]"/>
@@ -32,7 +32,7 @@
 		response. The name of the node does not matter (may be <error/>
 		as well).
 	-->
-	<xsl:variable name="invalid" select="boolean(/data/events/*[name()=$event]/*/@message = $config/data/fields/field[@type=$field]/errors/*/@message)"/>
+	<xsl:variable name="invalid" select="boolean(/data/events/*[name()=$event]/*/@message = $members:config/data/fields/field[@type=$field]/errors/*/@message)"/>
 	<div class="input">
 		<label for="{$id}">
 			<xsl:if test="$invalid">
@@ -71,7 +71,7 @@
 					<xsl:with-param name="event" select="$event"/>
 					<xsl:with-param name="value" select="$value"/>
 					<xsl:with-param name="field" select="'password'"/>
-					<xsl:with-param name="field-label" select="$config/data/fields/field[@type='password']/label/login"/>
+					<xsl:with-param name="field-label" select="$members:config/data/fields/field[@type='password']/label/login"/>
 				</xsl:call-template>
 			</xsl:when>
 			<xsl:otherwise>
@@ -80,10 +80,10 @@
 					<xsl:with-param name="event" select="$event"/>
 					<xsl:with-param name="value" select="$value"/>
 					<xsl:with-param name="field" select="'password'"/>
-					<xsl:with-param name="field-label" select="$config/data/fields/field[@type='password']/label/*[name()=$mode]"/>
-					<xsl:with-param name="field-handle" select="concat($config/data/fields/field[@type='password']/@handle, '-password')"/>
-					<xsl:with-param name="name" select="concat('fields[', $config/data/fields/field[@type='password']/@handle, '][password]')"/>
-					<xsl:with-param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$config/data/fields/field[@type='password']/@handle]/password"/>
+					<xsl:with-param name="field-label" select="$members:config/data/fields/field[@type='password']/label/*[name()=$mode]"/>
+					<xsl:with-param name="field-handle" select="concat($members:config/data/fields/field[@type='password']/@handle, '-password')"/>
+					<xsl:with-param name="name" select="concat('fields[', $members:config/data/fields/field[@type='password']/@handle, '][password]')"/>
+					<xsl:with-param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$members:config/data/fields/field[@type='password']/@handle]/password"/>
 				</xsl:call-template>
 			</xsl:otherwise>
 		</xsl:choose>
@@ -98,10 +98,10 @@
 		<xsl:with-param name="event" select="$event"/>
 		<xsl:with-param name="value" select="$value"/>
 		<xsl:with-param name="field" select="'password-confirm'"/>
-		<xsl:with-param name="field-label" select="$config/data/fields/field[@type='password-confirm']/label/*[name()=$mode]"/>
-		<xsl:with-param name="field-handle" select="concat($config/data/fields/field[@type='password']/@handle, '-confirm')"/>
-		<xsl:with-param name="name" select="concat('fields[', $config/data/fields/field[@type='password']/@handle, '][confirm]')"/>
-		<xsl:with-param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$config/data/fields/field[@type='password']/@handle]/confirm"/>
+		<xsl:with-param name="field-label" select="$members:config/data/fields/field[@type='password-confirm']/label/*[name()=$mode]"/>
+		<xsl:with-param name="field-handle" select="concat($members:config/data/fields/field[@type='password']/@handle, '-confirm')"/>
+		<xsl:with-param name="name" select="concat('fields[', $members:config/data/fields/field[@type='password']/@handle, '][confirm]')"/>
+		<xsl:with-param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$members:config/data/fields/field[@type='password']/@handle]/confirm"/>
 	</xsl:call-template>
 </xsl:template>
 
@@ -112,9 +112,9 @@
 		<xsl:with-param name="event" select="$event"/>
 		<xsl:with-param name="value" select="$value"/>
 		<xsl:with-param name="field" select="'recovery-code'"/>
-		<xsl:with-param name="field-handle" select="concat($config/data/fields/field[@type='password']/@handle, '-recovery-code')"/>
-		<xsl:with-param name="name" select="concat('fields[', $config/data/fields/field[@type='password']/@handle, '][recovery-code]')"/>
-		<xsl:with-param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$config/data/fields/field[@type='password']/@handle]/recovery-code"/>
+		<xsl:with-param name="field-handle" select="concat($members:config/data/fields/field[@type='password']/@handle, '-recovery-code')"/>
+		<xsl:with-param name="name" select="concat('fields[', $members:config/data/fields/field[@type='password']/@handle, '][recovery-code]')"/>
+		<xsl:with-param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$members:config/data/fields/field[@type='password']/@handle]/recovery-code"/>
 	</xsl:call-template>
 </xsl:template>
 
@@ -124,14 +124,14 @@
 	<xsl:call-template name="members:input">
 		<xsl:with-param name="event" select="$event"/>
 		<xsl:with-param name="value" select="$value"/>
-		<xsl:with-param name="field" select="$config/data/fields/field[@type='identity']/@link"/>
+		<xsl:with-param name="field" select="$members:config/data/fields/field[@type='identity']/@link"/>
 	</xsl:call-template>
 </xsl:template>
 
 <xsl:template name="members:input-submit">
 	<xsl:param name="event"/>
 	<xsl:param name="name" select="concat('action[', $event, ']')"/>
-	<xsl:param name="value" select="$config/data/events/event[@handle=$event]/@submit-value"/>
+	<xsl:param name="value" select="$members:config/data/events/event[@handle=$event]/@submit-value"/>
 	<xsl:param name="redirect"/>
 	<div class="input submit">
 		<xsl:if test="$redirect != ''">
@@ -151,7 +151,7 @@
 		<xsl:when test="$event='member-login-info' and not($xml-event/@result)"/>
 		<xsl:otherwise>
 			<xsl:apply-templates select="$xml-event" mode="members:validation-summary"/>
-			<xsl:apply-templates select="$xml-event/filter[@name=$config/data/events/event[@handle=$event]/filter/@handle]" mode="members:validation-summary"/>
+			<xsl:apply-templates select="$xml-event/filter[@name=$members:config/data/events/event[@handle=$event]/filter/@handle]" mode="members:validation-summary"/>
 		</xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
@@ -160,7 +160,7 @@
 	<xsl:param name="event" select="name()"/>
 	<xsl:param name="result" select="@result"/>
 	<xsl:param name="message">
-		<xsl:variable name="custom-message" select="$config/data/events/event[@handle=$event]/messages/*[name()=$result]"/>
+		<xsl:variable name="custom-message" select="$members:config/data/events/event[@handle=$event]/messages/*[name()=$result]"/>
 		<xsl:choose>
 			<xsl:when test="$custom-message">
 				<xsl:copy-of select="$custom-message"/>
@@ -192,7 +192,7 @@
 			matter here! (This placement only decides rendering of "invalid"
 			classes for fields, see 'members:input' template.)
 		-->
-		<xsl:variable name="custom-message" select="$config/data/fields/field/errors/*[name()=$field and @message=$this-message]"/>
+		<xsl:variable name="custom-message" select="$members:config/data/fields/field/errors/*[name()=$field and @message=$this-message]"/>
 		<xsl:choose>
 			<xsl:when test="$custom-message!=''">
 				<xsl:copy-of select="$custom-message/*|$custom-message/text()"/>
@@ -224,7 +224,7 @@
 		</xsl:choose>
 	</xsl:param>
 	<xsl:param name="message">
-		<xsl:variable name="custom-message" select="$config/data/events/event[@handle=$event]/filter[@handle=$filter]/messages/*[name()=$status]"/>
+		<xsl:variable name="custom-message" select="$members:config/data/events/event[@handle=$event]/filter[@handle=$filter]/messages/*[name()=$status]"/>
 		<xsl:choose>
 			<xsl:when test="$custom-message">
 				<xsl:copy-of select="$custom-message"/>
