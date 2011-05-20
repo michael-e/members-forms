@@ -23,10 +23,10 @@
 				<label>Username</label>
 				<errors>
 					<username type="missing" message="USERNAME is a required field."/>
-					<username type="invalid" message="USERNAME contains invalid characters.">The username is invalid. It must be at least 4 characters.</benutzername>
+					<username type="invalid" message="USERNAME contains invalid characters.">The username is invalid. It must be at least 4 characters.</username>
 					<username type="invalid" message="USERNAME is already taken."/>
 					<username type="invalid" message="Member not found."/>
-					<error type="invalid" message="No Identity field found."/>'Username' is a required field.</error>
+					<error type="invalid" message="No Identity field found.">'Username' is a required field.</error>
 				</errors>
 			</field>
 			<field type="email" handle="email">
