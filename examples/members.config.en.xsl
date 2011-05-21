@@ -26,7 +26,7 @@
 					<username type="invalid" message="USERNAME contains invalid characters.">The username is invalid. It must be at least 4 characters.</username>
 					<username type="invalid" message="USERNAME is already taken."/>
 					<username type="invalid" message="Member not found."/>
-					<error type="invalid" message="No Identity field found."/>'Username' is a required field.</error>
+					<error type="invalid" message="No Identity field found.">'Username' is a required field.</error>
 				</errors>
 			</field>
 			<field type="email" handle="email">
@@ -34,7 +34,7 @@
 				<errors>
 					<email type="missing" message="E-Mail is a required field."/>
 					<email type="invalid" message="E-Mail is already taken."/>
-					<email type="invalid" message="E-Mail contains invalid characters.">'Email' does not seem to be a valid address.</e-mail>
+					<email type="invalid" message="E-Mail contains invalid characters.">'Email' does not seem to be a valid address.</email>
 					<email type="invalid" message="Member not found."/>
 				</errors>
 			</field>
@@ -65,7 +65,7 @@
 			<field type="recovery-code">
 				<label>Recovery Code</label>
 				<errors>
-					<password type="invalid" message="No recovery code found.">The password recovery code was invalid or has expired.</passwort>
+					<password type="invalid" message="No recovery code found.">The password recovery code was invalid or has expired.</password>
 				</errors>
 			</field>
 			<field type="activation" handle="activation">
