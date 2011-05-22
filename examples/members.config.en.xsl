@@ -163,13 +163,7 @@
 			</event>
 			<event handle="members-reset-password" submit-value="Save Passsword">
 				<messages>
-					<!--
-						Due to the auto-login feature of the Reset Password
-						event you will probably use a redirect on form submit.
-						This would mean that the success message will never
-						be rendered.
-					-->
-					<success><p>Your new password has been saved successfully, and you have been logged in.</p></success>
+					<success><p>Your new password has been saved successfully.</p></success>
 					<error><p>Problems occurred while saving your new password.</p></error>
 				</messages>
 			</event>
