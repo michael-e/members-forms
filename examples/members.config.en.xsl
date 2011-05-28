@@ -49,6 +49,7 @@
 					<password type="invalid" message="Password is too short. It must be at least 6 characters."/>
 					<password type="invalid" message="Password is not strong enough."/>
 					<password type="invalid" message="Invalid Password."/>
+					<password type="invalid" message="Password confirmation does not match."/>
 				</errors>
 			</field>
 			<field type="password-confirm">
@@ -57,9 +58,10 @@
 					<edit>Confirm New Password</edit>
 				</label>
 				<errors>
-					<password type="invalid" message="Password confirmation does not match."/>
-					<password type="invalid" message="Password is too short. It must be at least 6 characters."/>
-					<password type="invalid" message="Password is not strong enough."/>
+					<passwort type="missing" message="Passwort is a required field."/>
+					<passwort type="invalid" message="Passwort is too short. It must be at least 6 characters."/>
+					<passwort type="invalid" message="Passwort is not strong enough."/>
+					<passwort type="invalid" message="Passwort confirmation does not match."/>
 				</errors>
 			</field>
 			<field type="recovery-code">

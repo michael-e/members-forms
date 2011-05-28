@@ -72,6 +72,7 @@
 					<xsl:with-param name="value" select="$value"/>
 					<xsl:with-param name="field" select="'password'"/>
 					<xsl:with-param name="field-label" select="$members:config/data/fields/field[@type='password']/label/login"/>
+					<xsl:with-param name="xml-post-value"/>
 				</xsl:call-template>
 			</xsl:when>
 			<xsl:otherwise>
@@ -83,7 +84,7 @@
 					<xsl:with-param name="field-label" select="$members:config/data/fields/field[@type='password']/label/*[name()=$mode]"/>
 					<xsl:with-param name="field-handle" select="concat($members:config/data/fields/field[@type='password']/@handle, '-password')"/>
 					<xsl:with-param name="name" select="concat('fields[', $members:config/data/fields/field[@type='password']/@handle, '][password]')"/>
-					<xsl:with-param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$members:config/data/fields/field[@type='password']/@handle]/password"/>
+					<xsl:with-param name="xml-post-value"/>
 				</xsl:call-template>
 			</xsl:otherwise>
 		</xsl:choose>
@@ -101,7 +102,7 @@
 		<xsl:with-param name="field-label" select="$members:config/data/fields/field[@type='password-confirm']/label/*[name()=$mode]"/>
 		<xsl:with-param name="field-handle" select="concat($members:config/data/fields/field[@type='password']/@handle, '-confirm')"/>
 		<xsl:with-param name="name" select="concat('fields[', $members:config/data/fields/field[@type='password']/@handle, '][confirm]')"/>
-		<xsl:with-param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$members:config/data/fields/field[@type='password']/@handle]/confirm"/>
+		<xsl:with-param name="xml-post-value"/>
 	</xsl:call-template>
 </xsl:template>
 
@@ -114,7 +115,7 @@
 		<xsl:with-param name="field" select="'recovery-code'"/>
 		<xsl:with-param name="field-handle" select="concat($members:config/data/fields/field[@type='password']/@handle, '-recovery-code')"/>
 		<xsl:with-param name="name" select="concat('fields[', $members:config/data/fields/field[@type='password']/@handle, '][recovery-code]')"/>
-		<xsl:with-param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$members:config/data/fields/field[@type='password']/@handle]/recovery-code"/>
+		<xsl:with-param name="xml-post-value"/>
 	</xsl:call-template>
 </xsl:template>
 
