@@ -59,12 +59,12 @@
 					<passwort type="missing" message="Passwort is a required field.">Passwort ist ein Pflichtfeld.</passwort>
 					<passwort type="invalid" message="Passwort is too short. It must be at least 6 characters.">Passwort ist zu kurz. Es muss mindestens 6 Zeichen lang sein.</passwort>
 					<passwort type="invalid" message="Passwort is not strong enough.">Passwort ist nicht sicher genug.</passwort>
-					<passwort type="invalid" message="Invalid Passwort.">Ungültiges Passwort.</passwort>
+					<passwort type="invalid" message="Invalid Passwort.">Passwort ungültig.</passwort>
 
 					<passwort type="missing" message="Passwort ist ein Pflichtfeld.">Passwort ist ein Pflichtfeld.</passwort>
 					<passwort type="invalid" message="Passwort ist zu kurz. Es muss mindestens 6 Zeichen lang sein.">Passwort ist zu kurz. Es muss mindestens 6 Zeichen lang sein.</passwort>
 					<passwort type="invalid" message="Passwort ist nicht sicher genug.">Passwort ist nicht sicher genug.</passwort>
-					<passwort type="invalid" message="Ungültiges Passwort.">Ungültiges Passwort.</passwort>
+					<passwort type="invalid" message="Passwort ungültig.">Ungültiges Passwort.</passwort>
 				</errors>
 			</field>
 			<field type="password-confirm">
