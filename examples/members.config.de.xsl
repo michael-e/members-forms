@@ -5,6 +5,18 @@
 <xsl:variable name="members-config">
 	<data>
 		<!--
+			If the 'use-password-postback' value is true, any POST password value
+			will be sent back as input field value. If form submission fails for
+			any reason, this behaviour is more convenient for the user.
+			However, sending the password value in the page source means a
+			slight security issue, so it should not be used when security has
+			the highest priority!
+		-->
+		<security>
+			<use-password-postback>true</use-password-postback>
+		</security>
+
+		<!--
 			This datasource is needed to edit member data.
 			See members.form-edit-account.xsl
 		-->

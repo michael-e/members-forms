@@ -15,7 +15,7 @@
 <!-- Changing anything below this line is at your own risk. -->
 
 <xsl:variable name="members:config" select="exsl:node-set($members-config)"/>
-<xsl:variable name="members:use-password-postback" select="boolean($members:config/data/security/@use-password-postback = 'true')"/>
+<xsl:variable name="members:use-password-postback" select="boolean($members:config/data/security/use-password-postback = 'true')"/>
 
 <xsl:template name="members:input">
 	<xsl:param name="type" select="'text'"/>
