@@ -13,7 +13,7 @@
 			the highest priority!
 		-->
 		<security>
-			<use-password-postback>true</use-password-postback>
+			<use-password-postback>false</use-password-postback>
 		</security>
 
 		<!--
