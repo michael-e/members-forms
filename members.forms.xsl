@@ -50,10 +50,10 @@
 				</xsl:attribute>
 			</xsl:if>
 			<xsl:choose>
-				<xsl:when test="$xml-post-value">
+				<xsl:when test="$xml-post-value != ''">
 					<xsl:attribute name="value"><xsl:value-of select="$xml-post-value"/></xsl:attribute>
 				</xsl:when>
-				<xsl:when test="$value">
+				<xsl:when test="$value != ''">
 					<xsl:attribute name="value"><xsl:value-of select="$value"/></xsl:attribute>
 				</xsl:when>
 			</xsl:choose>
