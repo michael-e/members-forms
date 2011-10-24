@@ -153,6 +153,23 @@ When configuration is done, import the template files in your pages and call the
 	<xsl:call-template name="members-form-reset-password"/>
 
 
+### Setting an ID for Input Type "submit"
+
+Submit inputs will not have an ID by default. However, you can set an ID in your template, e.g.:
+
+	<xsl:call-template name="members:input-submit">
+		<xsl:with-param name="event" select="$event"/>
+		<xsl:with-param name="id" select="'master-monster-submit-button'"/>
+		<xsl:with-param name="name" select="'member-action[login]'"/>
+	</xsl:call-template>
+
+The above will result in the following output:
+
+	<div class="input submit">
+	  <input type="submit" name="member-action[login]" value="Login" id="master-monster-submit-button" />
+	</div>
+
+
 ## Namespace
 
 `members.forms.xsl` uses the namespace `members` for form elements and validation templates. So if you want to use these directly in your own pages or utilities, you will have to include the namespace:
