@@ -155,7 +155,13 @@
 		<xsl:if test="$redirect != ''">
 			<input type="hidden" name="redirect" value="{$redirect}"/>
 		</xsl:if>
-		<input type="submit" name="{$name}" value="{$value}"/>
+		<input type="submit" name="{$name}" value="{$value}">
+			<xsl:if test="$id != ''">
+				<xsl:attribute name="id">
+					<xsl:value-of select="$id"/>
+				</xsl:attribute>
+			</xsl:if>
+		</input>
 	</div>
 </xsl:template>
 
