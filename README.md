@@ -153,6 +153,25 @@ When configuration is done, import the template files in your pages and call the
 	<xsl:call-template name="members-form-reset-password"/>
 
 
+### Overriding Auto-generated IDs
+
+If you add **two or more forms** to the same page, ID clashes may occur due to input field IDs being auto-generated using the naming scheme `concat('fields-', $field-handle)`.
+
+To solve this, version 1.1 of Members Forms introduced the ability to **override auto-generated IDs** for input fields by explicitely passing an ID to named templates. For example, if you add a login form to any page, you may want to use the following in `members.form-login.xsl`:
+
+	<xsl:call-template name="members:input-identity">
+	    <xsl:with-param name="event" select="$event"/>
+	    <xsl:with-param name="id" select="'some-special-id'"/>
+	</xsl:call-template>
+
+The above will output:
+
+	<div class="input">
+	    <label for="some-special-id">Username</label>
+	    <input type="text" id="some-special-id" name="fields[username]" />
+	</div>
+
+
 ### Setting an ID for Input Type "submit"
 
 Submit inputs will not have an ID by default. However, you can set an ID in your template, e.g.:

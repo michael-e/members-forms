@@ -24,9 +24,19 @@
 	<xsl:param name="field"/>
 	<xsl:param name="field-label" select="$members:config/data/fields/field[@type=$field]/label"/>
 	<xsl:param name="field-handle" select="$members:config/data/fields/field[@type=$field]/@handle"/>
-	<xsl:param name="id" select="concat('fields-', $field-handle)"/>
+	<xsl:param name="id"/>
 	<xsl:param name="name" select="concat('fields[', $field-handle, ']')"/>
 	<xsl:param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$field-handle]"/>
+	<xsl:variable name="id">
+		<xsl:choose>
+			<xsl:when test="$id != ''">
+				<xsl:value-of select="$id"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="concat('fields-', $field-handle)"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
 	<!--
 		Check if the field's configuration contains an element with
 		the same message attribute value as found in the event XML
@@ -64,6 +74,7 @@
 <xsl:template name="members:input-password">
 	<xsl:param name="event"/>
 	<xsl:param name="value"/>
+	<xsl:param name="id"/>
 	<xsl:param name="mode"/>
 		<xsl:choose>
 			<xsl:when test="$mode='login'">
@@ -71,6 +82,7 @@
 					<xsl:with-param name="type" select="'password'"/>
 					<xsl:with-param name="event" select="$event"/>
 					<xsl:with-param name="value" select="$value"/>
+					<xsl:with-param name="id" select="$id"/>
 					<xsl:with-param name="field" select="'password'"/>
 					<xsl:with-param name="field-label" select="$members:config/data/fields/field[@type='password']/label/login"/>
 					<xsl:with-param name="xml-post-value">
@@ -85,6 +97,7 @@
 					<xsl:with-param name="type" select="'password'"/>
 					<xsl:with-param name="event" select="$event"/>
 					<xsl:with-param name="value" select="$value"/>
+					<xsl:with-param name="id" select="$id"/>
 					<xsl:with-param name="field" select="'password'"/>
 					<xsl:with-param name="field-label" select="$members:config/data/fields/field[@type='password']/label/*[name()=$mode]"/>
 					<xsl:with-param name="field-handle" select="concat($members:config/data/fields/field[@type='password']/@handle, '-password')"/>
@@ -102,11 +115,13 @@
 <xsl:template name="members:input-password-confirm">
 	<xsl:param name="event"/>
 	<xsl:param name="value"/>
+	<xsl:param name="id"/>
 	<xsl:param name="mode"/>
 	<xsl:call-template name="members:input">
 		<xsl:with-param name="type" select="'password'"/>
 		<xsl:with-param name="event" select="$event"/>
 		<xsl:with-param name="value" select="$value"/>
+		<xsl:with-param name="id" select="$id"/>
 		<xsl:with-param name="field" select="'password-confirm'"/>
 		<xsl:with-param name="field-label" select="$members:config/data/fields/field[@type='password-confirm']/label/*[name()=$mode]"/>
 		<xsl:with-param name="field-handle" select="concat($members:config/data/fields/field[@type='password']/@handle, '-confirm')"/>
@@ -122,9 +137,11 @@
 <xsl:template name="members:input-recovery-code">
 	<xsl:param name="event"/>
 	<xsl:param name="value"/>
+	<xsl:param name="id"/>
 	<xsl:call-template name="members:input">
 		<xsl:with-param name="event" select="$event"/>
 		<xsl:with-param name="value" select="$value"/>
+		<xsl:with-param name="id" select="$id"/>
 		<xsl:with-param name="field" select="'recovery-code'"/>
 		<xsl:with-param name="field-handle" select="concat($members:config/data/fields/field[@type='password']/@handle, '-recovery-code')"/>
 		<xsl:with-param name="name" select="concat('fields[', $members:config/data/fields/field[@type='password']/@handle, '][recovery-code]')"/>
@@ -139,9 +156,11 @@
 <xsl:template name="members:input-identity">
 	<xsl:param name="event"/>
 	<xsl:param name="value"/>
+	<xsl:param name="id"/>
 	<xsl:call-template name="members:input">
 		<xsl:with-param name="event" select="$event"/>
 		<xsl:with-param name="value" select="$value"/>
+		<xsl:with-param name="id" select="$id"/>
 		<xsl:with-param name="field" select="$members:config/data/fields/field[@type='identity']/@link"/>
 	</xsl:call-template>
 </xsl:template>
@@ -149,6 +168,7 @@
 <xsl:template name="members:input-submit">
 	<xsl:param name="event"/>
 	<xsl:param name="name" select="concat('action[', $event, ']')"/>
+	<xsl:param name="id"/>
 	<xsl:param name="value" select="$members:config/data/events/event[@handle=$event]/@submit-value"/>
 	<xsl:param name="redirect"/>
 	<div class="input submit">
