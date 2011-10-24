@@ -35,6 +35,14 @@ Included are seven `members.form-...` utilities which simply call named template
 Members Forms can be downloaded from Github: <http://github.com/michael-e/member-forms>
 
 
+## Release Notes
+
+[1.1]
+
+- Introduced the ability to set an ID for input elements of type "submit" by explicitely passing an ID to named templates (see "Usage" section of this README).
+- Introduced the ability to override auto-generated IDs for all other input fields by explicitely passing an ID to named templates (see "Usage" section of this README).
+
+
 ## Quick Start
 
 1. Rename the download folder to `members-forms` and throw it into the `workspace/utilities` folder of your website.
