@@ -27,7 +27,7 @@
 	<xsl:param name="id"/>
 	<xsl:param name="name" select="concat('fields[', $field-handle, ']')"/>
 	<xsl:param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$field-handle]"/>
-	<xsl:variable name="id">
+	<xsl:variable name="final-id">
 		<xsl:choose>
 			<xsl:when test="$id != ''">
 				<xsl:value-of select="$id"/>
@@ -45,7 +45,7 @@
 	-->
 	<xsl:variable name="invalid" select="boolean(/data/events/*[name()=$event]/*/@message = $members:config/data/fields/field[@type=$field]/errors/*/@message)"/>
 	<div class="input">
-		<label for="{$id}">
+		<label for="{$final-id}">
 			<xsl:if test="$invalid">
 				<xsl:attribute name="class">
 					<xsl:value-of select="$members:invalid-class"/>
@@ -53,7 +53,7 @@
 			</xsl:if>
 			<xsl:copy-of select="$field-label/*|$field-label/text()"/>
 		</label>
-		<input type="{$type}" id="{$id}" name="{$name}">
+		<input type="{$type}" id="{$final-id}" name="{$name}">
 			<xsl:if test="$invalid">
 				<xsl:attribute name="class">
 					<xsl:value-of select="$members:invalid-class"/>
