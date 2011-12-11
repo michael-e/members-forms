@@ -197,6 +197,20 @@ The above will result in the following output:
 	</div>
 
 
+### Using Redirect Parameters
+
+When calling the `input-submit` template, you may specifiy a "redirect upon success" as well:
+
+	<xsl:call-template name="members:input-submit">
+		<xsl:with-param name="event" select="$event"/>
+		<xsl:with-param name="redirect" select="'http://example.com'"/>
+	</xsl:call-template>
+
+At the time of writing I am not sure if all Members events support redirects, so it may be a matter of trial end error.
+
+You should keep in mind that POST values will not "survive" a redirect. So they will not show up in the target page's event XML.
+
+
 ## Namespace
 
 `members.forms.xsl` uses the namespace `members` for form elements and validation templates. So if you want to use these directly in your own pages or utilities, you will have to include the namespace:
