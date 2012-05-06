@@ -48,12 +48,12 @@
 				</errors>
 			</field>
 			<field type="email" handle="email">
-				<label>E-Mail</label>
+				<label>Email</label>
 				<errors>
-					<email type="missing" message="E-Mail is a required field."/>
-					<email type="missing" message="'E-Mail' is a required field."/>
-					<email type="invalid" message="E-Mail is already taken."/>
-					<email type="invalid" message="E-Mail contains invalid characters.">'Email' does not seem to be a valid address.</email>
+					<email type="missing" message="Email is a required field."/>
+					<email type="missing" message="'Email' is a required field."/>
+					<email type="invalid" message="Email is already taken."/>
+					<email type="invalid" message="Email contains invalid characters.">'Email' does not seem to be a valid address.</email>
 					<email type="invalid" message="Member not found."/>
 				</errors>
 			</field>
