@@ -34,7 +34,7 @@
 			<!--
 				Note that 'missing' error messages will include single quotes
 				for certain fields, whereas other error types won't use
-				quotes. To be on the safe side if we configure both versions.
+				quotes. To be on the safe side we configure both versions.
 			-->
 			<field type="username" handle="username">
 				<label>Username</label>
