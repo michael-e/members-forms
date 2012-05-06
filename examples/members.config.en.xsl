@@ -31,10 +31,16 @@
 			-->
 			<field type="identity" link="username"/>
 
+			<!--
+				Note that 'missing' error messages will include single quotes
+				for certain fields, whereas other error types won't use
+				quotes. To be on the safe side if we configure both versions.
+			-->
 			<field type="username" handle="username">
 				<label>Username</label>
 				<errors>
 					<username type="missing" message="USERNAME is a required field."/>
+					<username type="missing" message="'USERNAME' is a required field."/>
 					<username type="invalid" message="USERNAME contains invalid characters.">The username is invalid. It must be at least 4 characters.</username>
 					<username type="invalid" message="USERNAME is already taken."/>
 					<username type="invalid" message="Member not found."/>
@@ -45,6 +51,7 @@
 				<label>E-Mail</label>
 				<errors>
 					<email type="missing" message="E-Mail is a required field."/>
+					<email type="missing" message="'E-Mail' is a required field."/>
 					<email type="invalid" message="E-Mail is already taken."/>
 					<email type="invalid" message="E-Mail contains invalid characters.">'Email' does not seem to be a valid address.</email>
 					<email type="invalid" message="Member not found."/>
@@ -58,6 +65,7 @@
 				</label>
 				<errors>
 					<password type="missing" message="Password is a required field."/>
+					<password type="missing" message="'Password' is a required field."/>
 					<password type="invalid" message="Password is too short. It must be at least 6 characters."/>
 					<password type="invalid" message="Password is not strong enough."/>
 					<password type="invalid" message="Invalid Password."/>
@@ -70,10 +78,11 @@
 					<edit>Confirm New Password</edit>
 				</label>
 				<errors>
-					<passwort type="missing" message="Passwort is a required field."/>
-					<passwort type="invalid" message="Passwort is too short. It must be at least 6 characters."/>
-					<passwort type="invalid" message="Passwort is not strong enough."/>
-					<passwort type="invalid" message="Passwort confirmation does not match."/>
+					<password type="missing" message="Password is a required field."/>
+					<password type="missing" message="'Password' is a required field."/>
+					<password type="invalid" message="Password is too short. It must be at least 6 characters."/>
+					<password type="invalid" message="Password is not strong enough."/>
+					<password type="invalid" message="Password confirmation does not match."/>
 				</errors>
 			</field>
 			<field type="recovery-code">
@@ -86,6 +95,7 @@
 				<label>Activation Code</label>
 				<errors>
 					<activation type="missing" message="Activation Code is a required field."/>
+					<activation type="missing" message="'Activation Code' is a required field."/>
 					<activation type="invalid" message="Activation error. Code was invalid or has expired."/>
 					<activation type="invalid" message="Member is already activated."/>
 					<activation type="invalid" message="Member is not activated."/>

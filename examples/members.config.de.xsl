@@ -31,16 +31,23 @@
 			-->
 			<field type="identity" link="username"/>
 
+			<!--
+				Note that 'missing' error messages will include single quotes
+				for certain fields, whereas other error types won't use
+				quotes. To be on the safe side if we configure both versions.
+			-->
 			<field type="username" handle="benutzername">
 				<label>Benutzername</label>
 				<errors>
 					<benutzername type="missing" message="Benutzername is a required field.">Benutzername ist ein Pflichtfeld.</benutzername>
+					<benutzername type="missing" message="'Benutzername' is a required field.">Benutzername ist ein Pflichtfeld.</benutzername>
 					<benutzername type="invalid" message="Benutzername contains invalid characters.">Der Benutzername ist ungültig. Er muss mindestens 4 Zeichen lang sein und darf nur aus Buchstaben, Zahlen und Minuszeichen (-) bestehen.</benutzername>
 					<benutzername type="invalid" message="Benutzername is already taken.">Benutzername ist bereits vergeben.</benutzername>
 					<benutzername type="invalid" message="Member not found.">Benutzer nicht gefunden.</benutzername>
 					<error type="invalid" message="No Identity field found.">Benutzername ist ein Pflichtfeld.</error>
 
 					<benutzername type="missing" message="Benutzername ist ein Pflichtfeld.">Benutzername ist ein Pflichtfeld.</benutzername>
+					<benutzername type="missing" message="'Benutzername' ist ein Pflichtfeld.">Benutzername ist ein Pflichtfeld.</benutzername>
 					<benutzername type="invalid" message="Benutzername enthält ungültige Zeichen.">Der Benutzername ist ungültig. Er muss mindestens 4 Zeichen lang sein und darf nur aus Buchstaben, Zahlen und Minuszeichen (-) bestehen.</benutzername>
 					<benutzername type="invalid" message="Benutzername ist bereits vergeben.">Benutzername ist bereits vergeben.</benutzername>
 					<benutzername type="invalid" message="Benutzer nicht gefunden.">Benutzer nicht gefunden.</benutzername>
@@ -51,11 +58,13 @@
 				<label>E-Mail</label>
 				<errors>
 					<e-mail type="missing" message="E-Mail is a required field.">E-Mail ist ein Pflichtfeld.</e-mail>
+					<e-mail type="missing" message="'E-Mail' is a required field.">E-Mail ist ein Pflichtfeld.</e-mail>
 					<e-mail type="invalid" message="E-Mail is already taken.">E-Mail-Adresse ist bereits vergeben.</e-mail>
 					<e-mail type="invalid" message="E-Mail contains invalid characters.">E-Mail ist ungültig.</e-mail>
 					<e-mail type="invalid" message="Member not found.">Benutzer nicht gefunden.</e-mail>
 
 					<e-mail type="missing" message="E-Mail ist ein Pflichtfeld.">E-Mail ist ein Pflichtfeld.</e-mail>
+					<e-mail type="missing" message="'E-Mail' ist ein Pflichtfeld.">E-Mail ist ein Pflichtfeld.</e-mail>
 					<e-mail type="invalid" message="E-Mail ist bereits vergeben.">E-Mail-Adresse ist bereits vergeben.</e-mail>
 					<e-mail type="invalid" message="E-Mail enthält ungültige Zeichen.">E-Mail ist ungültig.</e-mail>
 					<e-mail type="invalid" message="Benutzer nicht gefunden.">Benutzer nicht gefunden.</e-mail>
@@ -69,12 +78,14 @@
 				</label>
 				<errors>
 					<passwort type="missing" message="Passwort is a required field.">Passwort ist ein Pflichtfeld.</passwort>
+					<passwort type="missing" message="'Passwort' is a required field.">Passwort ist ein Pflichtfeld.</passwort>
 					<passwort type="invalid" message="Passwort is too short. It must be at least 6 characters.">Passwort ist zu kurz. Es muss mindestens 6 Zeichen lang sein.</passwort>
 					<passwort type="invalid" message="Passwort is not strong enough.">Passwort ist nicht sicher genug.</passwort>
 					<passwort type="invalid" message="Invalid Passwort.">Passwort ungültig.</passwort>
 					<passwort type="invalid" message="Passwort confirmation does not match.">Passwort-Bestätigung stimmt nicht.</passwort>
 
 					<passwort type="missing" message="Passwort ist ein Pflichtfeld.">Passwort ist ein Pflichtfeld.</passwort>
+					<passwort type="missing" message="'Passwort' ist ein Pflichtfeld.">Passwort ist ein Pflichtfeld.</passwort>
 					<passwort type="invalid" message="Passwort ist zu kurz. Es muss mindestens 6 Zeichen lang sein.">Passwort ist zu kurz. Es muss mindestens 6 Zeichen lang sein.</passwort>
 					<passwort type="invalid" message="Passwort ist nicht sicher genug.">Passwort ist nicht sicher genug.</passwort>
 					<passwort type="invalid" message="Passwort ungültig.">Passwort ungültig.</passwort>
@@ -88,11 +99,13 @@
 				</label>
 				<errors>
 					<passwort type="missing" message="Passwort is a required field."/>
+					<passwort type="missing" message="'Passwort' is a required field."/>
 					<passwort type="invalid" message="Passwort is too short. It must be at least 6 characters."/>
 					<passwort type="invalid" message="Passwort is not strong enough."/>
 					<passwort type="invalid" message="Passwort confirmation does not match."/>
 
 					<passwort type="missing" message="Passwort ist ein Pflichtfeld."/>
+					<passwort type="missing" message="'Passwort' ist ein Pflichtfeld."/>
 					<passwort type="invalid" message="Passwort ist zu kurz. Es muss mindestens 6 Zeichen lang sein."/>
 					<passwort type="invalid" message="Passwort ist nicht sicher genug."/>
 					<passwort type="invalid" message="Passwort-Bestätigung stimmt nicht."/>
