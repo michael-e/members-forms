@@ -171,11 +171,17 @@
 	<xsl:param name="id"/>
 	<xsl:param name="value" select="$members:config/data/events/event[@handle=$event]/@submit-value"/>
 	<xsl:param name="redirect"/>
+	<xsl:param name="accesskey"/>
 	<div class="input submit">
 		<xsl:if test="$redirect != ''">
 			<input type="hidden" name="redirect" value="{$redirect}"/>
 		</xsl:if>
 		<input type="submit" name="{$name}" value="{$value}">
+			<xsl:if test="$accesskey != ''">
+				<xsl:attribute name="accesskey">
+					<xsl:value-of select="$accesskey"/>
+				</xsl:attribute>
+			</xsl:if>
 			<xsl:if test="$id != ''">
 				<xsl:attribute name="id">
 					<xsl:value-of select="$id"/>
