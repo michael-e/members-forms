@@ -221,7 +221,7 @@
 		</xsl:choose>
 	</xsl:param>
 	<xsl:if test="$message!=''">
-		<div class="validation-summary {$result}">
+		<div class="validation-summary event {$result}">
 			<xsl:apply-templates select="exsl:node-set($message)" mode="members:html-node"/>
 			<xsl:if test="*[@message]">
 				<ul>
@@ -285,7 +285,7 @@
 		</xsl:choose>
 	</xsl:param>
 	<xsl:if test="$message!=''">
-		<div class="validation-summary {$result}">
+		<div class="validation-summary filter {$result}">
 			<xsl:apply-templates select="exsl:node-set($message)" mode="members:html-node"/>
 		</div>
 	</xsl:if>
