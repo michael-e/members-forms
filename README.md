@@ -203,7 +203,7 @@ When calling the `input-submit` template, you may specifiy a "redirect upon succ
 
 	<xsl:call-template name="members:input-submit">
 		<xsl:with-param name="event" select="$event"/>
-		<xsl:with-param name="redirect" select="concat(substring-before($current-url, '?'), 'success/')"/>
+		<xsl:with-param name="redirect" select="concat($current-url, '/success/')"/>
 	</xsl:call-template>
 
 At the time of writing I am not sure if all Members events support redirects, so it may be a matter of trial end error.
