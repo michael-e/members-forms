@@ -65,7 +65,7 @@ Now you can build your first Members Forms page (a simple login page):
 		<h1>Login</h1>
 		<xsl:choose>
 			<xsl:when test="$member-is-logged-in">
-				<p>You are logged in. (<a href="?member-action=logout&amp;redirect={$current-url}">Logout</a>)</p>
+				<p>You are logged in. (<a href="?member-action=logout&amp;redirect={/data/params/current-url}">Logout</a>)</p>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:call-template name="members-form-login"/>
@@ -203,7 +203,7 @@ When calling the `input-submit` template, you may specifiy a "redirect upon succ
 
 	<xsl:call-template name="members:input-submit">
 		<xsl:with-param name="event" select="$event"/>
-		<xsl:with-param name="redirect" select="concat($current-url, '/success/')"/>
+		<xsl:with-param name="redirect" select="concat(/data/params/current-url, '/success/')"/>
 	</xsl:call-template>
 
 At the time of writing I am not sure if all Members events support redirects, so it may be a matter of trial end error.
