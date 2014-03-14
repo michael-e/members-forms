@@ -7,8 +7,6 @@
 
 <xsl:import href="members-forms/members.forms.xsl"/>
 
-<xsl:param name="url-id"/>
-
 <xsl:template name="members-form-generate-recovery-code">
 
 	<xsl:variable name="event" select="'members-generate-recovery-code'"/>
@@ -20,7 +18,7 @@
 	<form action="" method="post">
 		<xsl:call-template name="members:input-identity">
 			<xsl:with-param name="event" select="$event"/>
-			<xsl:with-param name="value" select="$url-id"/>
+			<xsl:with-param name="value" select="/data/params/url-id"/>
 		</xsl:call-template>
 		<xsl:call-template name="members:input-submit">
 			<xsl:with-param name="event" select="$event"/>

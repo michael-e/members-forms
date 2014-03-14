@@ -7,9 +7,6 @@
 
 <xsl:import href="members-forms/members.forms.xsl"/>
 
-<xsl:param name="url-id"/>
-<xsl:param name="url-code"/>
-
 <xsl:template name="members-form-activate-account">
 
 	<xsl:variable name="event" select="'members-activate-account'"/>
@@ -21,12 +18,12 @@
 	<form action="" method="post">
 		<xsl:call-template name="members:input-identity">
 			<xsl:with-param name="event" select="$event"/>
-			<xsl:with-param name="value" select="$url-id"/>
+			<xsl:with-param name="value" select="/data/params/url-id"/>
 		</xsl:call-template>
 		<xsl:call-template name="members:input">
 			<xsl:with-param name="field" select="'activation'"/>
 			<xsl:with-param name="event" select="$event"/>
-			<xsl:with-param name="value" select="$url-code"/>
+			<xsl:with-param name="value" select="/data/params/url-code"/>
 		</xsl:call-template>
 		<xsl:call-template name="members:input-submit">
 			<xsl:with-param name="event" select="$event"/>
