@@ -17,6 +17,10 @@
 
 	<form action="" method="post">
 		<div>
+			<!-- Use the ID of your current Members section! -->
+			<input type="hidden" name="members-section-id" value="99"/>
+		</div>
+		<div>
 			<input type="hidden" name="id" value="{//events/member-login-info/@id}"/>
 		</div>
 		<xsl:call-template name="members:input">

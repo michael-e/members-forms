@@ -16,6 +16,10 @@
 	</xsl:call-template>
 
 	<form action="" method="post">
+		<div>
+			<!-- Use the ID of your current Members section! -->
+			<input type="hidden" name="members-section-id" value="99"/>
+		</div>
 		<xsl:call-template name="members:input">
 			<xsl:with-param name="field" select="'username'"/>
 			<xsl:with-param name="event" select="$event"/>
