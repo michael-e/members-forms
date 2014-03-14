@@ -8,7 +8,7 @@
 <xsl:import href="members-forms/members.forms.xsl"/>
 
 <xsl:template name="members-form-edit-account">
-	
+
 	<xsl:variable name="event" select="'members-edit'"/>
 
 	<xsl:call-template name="members:validate">
@@ -16,7 +16,9 @@
 	</xsl:call-template>
 
 	<form action="" method="post">
-		<input type="hidden" name="id" value="{//events/member-login-info/@id}"/>
+		<div>
+			<input type="hidden" name="id" value="{//events/member-login-info/@id}"/>
+		</div>
 		<xsl:call-template name="members:input">
 			<xsl:with-param name="field" select="'username'"/>
 			<xsl:with-param name="event" select="$event"/>
