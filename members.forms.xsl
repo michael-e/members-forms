@@ -27,6 +27,7 @@
 	<xsl:param name="id"/>
 	<xsl:param name="name" select="concat('fields[', $field-handle, ']')"/>
 	<xsl:param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$field-handle]"/>
+	<xsl:param name="autocomplete" select="'on'"/>
 	<xsl:variable name="final-id">
 		<xsl:choose>
 			<xsl:when test="$id != ''">
@@ -53,7 +54,7 @@
 			</xsl:if>
 			<xsl:copy-of select="$field-label/*|$field-label/text()"/>
 		</label>
-		<input type="{$type}" id="{$final-id}" name="{$name}">
+		<input type="{$type}" id="{$final-id}" name="{$name}" autocomplete="{$autocomplete}">
 			<xsl:if test="$invalid">
 				<xsl:attribute name="class">
 					<xsl:value-of select="$members:invalid-class"/>
@@ -102,6 +103,7 @@
 					<xsl:with-param name="field-label" select="$members:config/data/fields/field[@type='password']/label/*[name()=$mode]"/>
 					<xsl:with-param name="field-handle" select="concat($members:config/data/fields/field[@type='password']/@handle, '-password')"/>
 					<xsl:with-param name="name" select="concat('fields[', $members:config/data/fields/field[@type='password']/@handle, '][password]')"/>
+					<xsl:with-param name="autocomplete" select="'off'"/>
 					<xsl:with-param name="xml-post-value">
 						<xsl:if test="$members:use-password-postback">
 							<xsl:value-of select="/data/events/*[name()=$event]/post-values/*[name()=$members:config/data/fields/field[@type='password']/@handle]/password"/>
@@ -126,6 +128,7 @@
 		<xsl:with-param name="field-label" select="$members:config/data/fields/field[@type='password-confirm']/label/*[name()=$mode]"/>
 		<xsl:with-param name="field-handle" select="concat($members:config/data/fields/field[@type='password']/@handle, '-confirm')"/>
 		<xsl:with-param name="name" select="concat('fields[', $members:config/data/fields/field[@type='password']/@handle, '][confirm]')"/>
+		<xsl:with-param name="autocomplete" select="'off'"/>
 		<xsl:with-param name="xml-post-value">
 			<xsl:if test="$members:use-password-postback">
 				<xsl:value-of select="/data/events/*[name()=$event]/post-values/*[name()=$members:config/data/fields/field[@type='password']/@handle]/confirm"/>
