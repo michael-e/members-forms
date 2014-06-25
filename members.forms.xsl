@@ -27,7 +27,7 @@
 	<xsl:param name="id"/>
 	<xsl:param name="name" select="concat('fields[', $field-handle, ']')"/>
 	<xsl:param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$field-handle]"/>
-	<xsl:param name="autocomplete" select="'on'"/>
+	<xsl:param name="autocomplete"/>
 	<xsl:variable name="final-id">
 		<xsl:choose>
 			<xsl:when test="$id != ''">
@@ -54,7 +54,12 @@
 			</xsl:if>
 			<xsl:copy-of select="$field-label/*|$field-label/text()"/>
 		</label>
-		<input type="{$type}" id="{$final-id}" name="{$name}" autocomplete="{$autocomplete}">
+		<input type="{$type}" id="{$final-id}" name="{$name}">
+			<xsl:if test="$autocomplete">
+				<xsl:attribute name="autocomplete">
+					<xsl:value-of select="$autocomplete"/>
+				</xsl:attribute>
+			</xsl:if>
 			<xsl:if test="$invalid">
 				<xsl:attribute name="class">
 					<xsl:value-of select="$members:invalid-class"/>
