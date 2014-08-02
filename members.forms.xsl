@@ -60,11 +60,17 @@
 				</xsl:attribute>
 			</xsl:if>
 			<xsl:choose>
-				<xsl:when test="$xml-post-value != ''">
-					<xsl:attribute name="value"><xsl:value-of select="$xml-post-value"/></xsl:attribute>
+				<!-- Event error: use POST value -->
+				<xsl:when test="/data/events/*[name()=$event]/@result = 'error'">
+					<xsl:attribute name="value">
+						<xsl:value-of select="$xml-post-value"/>
+					</xsl:attribute>
 				</xsl:when>
-				<xsl:when test="$value != ''">
-					<xsl:attribute name="value"><xsl:value-of select="$value"/></xsl:attribute>
+				<!-- If a value is available, use this -->
+				<xsl:when test="normalize-space($value)">
+					<xsl:attribute name="value">
+						<xsl:value-of select="$value"/>
+					</xsl:attribute>
 				</xsl:when>
 			</xsl:choose>
 		</input>
