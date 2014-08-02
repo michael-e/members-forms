@@ -51,6 +51,31 @@
 					<benutzername type="invalid" message="Benutzername enthält ungültige Zeichen.">Der Benutzername ist ungültig. Er muss mindestens 4 Zeichen lang sein und darf nur aus Buchstaben, Zahlen und Minuszeichen (-) bestehen.</benutzername>
 					<benutzername type="invalid" message="Benutzername ist bereits vergeben.">Benutzername ist bereits vergeben.</benutzername>
 					<benutzername type="invalid" message="Benutzer nicht gefunden.">Benutzer nicht gefunden.</benutzername>
+
+					<!-- testing
+						Unfortunately error codes in Symphony and in Members are currently unusable.
+						Although Symphony defines various error constants/return codes, it doesn't
+						use them consequently. It boils down to this (in class.event.section.php):
+
+							public static function createError(Field $field, $type, $message = null)
+							{
+							    $error = new XMLElement($field->get('element_name'), null, array(
+							        'label' => General::sanitize($field->get('label')),
+							        'type' => $type,
+							        'message-id' => ($type === 'missing') ? EventMessages::FIELD_MISSING : EventMessages::FIELD_INVALID,
+							        'message' => General::sanitize($message)
+							    ));
+
+							    return $error;
+							}
+
+						So don't expect message IDs different from 301 or 302.
+					-->
+					<benutzername message-id="301">Benutzername ist ein Pflichtfeld.</benutzername>
+					<benutzername message-id="302">Der Benutzername ist ungültig. Er muss mindestens 4 Zeichen lang sein und darf nur aus lateinischen Buchstaben (also <strong>nicht ä, ö, ü oder ß</strong>), Ziffern und Minuszeichen (-) bestehen.</benutzername>
+					<benutzername message-id="303">Benutzername ist bereits vergeben.</benutzername>
+					<!-- end testing -->
+
 					<error type="invalid" message="Kein Identitätsfeld gefunden.">Benutzername ist ein Pflichtfeld.</error>
 				</errors>
 			</field>

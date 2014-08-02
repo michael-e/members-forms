@@ -223,9 +223,9 @@
 	<xsl:if test="$message!=''">
 		<div class="validation-summary event {$result}">
 			<xsl:apply-templates select="exsl:node-set($message)" mode="members:html-node"/>
-			<xsl:if test="*[@message]">
+			<xsl:if test="*[not(self::message) and @message-id]">
 				<ul>
-					<xsl:apply-templates select="*/@message" mode="members:render-field-message"/>
+					<xsl:apply-templates select="*[not(self::message)]/@message-id" mode="members:render-field-message"/>
 				</ul>
 			</xsl:if>
 		</div>
@@ -243,6 +243,33 @@
 			classes for fields, see 'members:input' template.)
 		-->
 		<xsl:variable name="custom-message" select="$members:config/data/fields/field/errors/*[name()=$field and @message=$this-message]"/>
+		<xsl:choose>
+			<xsl:when test="$custom-message!=''">
+				<xsl:copy-of select="$custom-message/*|$custom-message/text()"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="."/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:param>
+	<xsl:if test="$message!=''">
+		<li>
+			<xsl:copy-of select="$message"/>
+		</li>
+	</xsl:if>
+</xsl:template>
+
+<xsl:template match="@message-id" mode="members:render-field-message">
+	<xsl:param name="field" select="name(..)"/>
+	<xsl:param name="this-message" select="."/>
+	<xsl:param name="message">
+		<!--
+			Find message with the correct node name.
+			The placement inside the config file (which field?) must not
+			matter here! (This placement only decides rendering of "invalid"
+			classes for fields, see 'members:input' template.)
+		-->
+		<xsl:variable name="custom-message" select="$members:config/data/fields/field/errors/*[name()=$field and @message-id=$this-message]"/>
 		<xsl:choose>
 			<xsl:when test="$custom-message!=''">
 				<xsl:copy-of select="$custom-message/*|$custom-message/text()"/>
