@@ -152,9 +152,7 @@
 		<xsl:with-param name="field-handle" select="concat($members:config/data/fields/field[@type='password']/@handle, '-recovery-code')"/>
 		<xsl:with-param name="name" select="concat('fields[', $members:config/data/fields/field[@type='password']/@handle, '][recovery-code]')"/>
 		<xsl:with-param name="xml-post-value">
-			<xsl:if test="$members:use-password-postback">
-				<xsl:value-of select="/data/events/*[name()=$event]/post-values/*[name()=$members:config/data/fields/field[@type='password']/@handle]/recovery-code"/>
-			</xsl:if>
+			<xsl:value-of select="/data/events/*[name()=$event]/post-values/*[name()=$members:config/data/fields/field[@type='password']/@handle]/recovery-code"/>
 		</xsl:with-param>
 	</xsl:call-template>
 </xsl:template>
