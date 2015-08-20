@@ -27,6 +27,7 @@
 	<xsl:param name="id"/>
 	<xsl:param name="name" select="concat('fields[', $field-handle, ']')"/>
 	<xsl:param name="xml-post-value" select="/data/events/*[name()=$event]/post-values/*[name()=$field-handle]"/>
+	<xsl:param name="autocomplete"/>
 	<xsl:variable name="final-id">
 		<xsl:choose>
 			<xsl:when test="$id != ''">
@@ -54,6 +55,11 @@
 			<xsl:copy-of select="$field-label/*|$field-label/text()"/>
 		</label>
 		<input type="{$type}" id="{$final-id}" name="{$name}">
+			<xsl:if test="$autocomplete != ''">
+				<xsl:attribute name="autocomplete">
+					<xsl:value-of select="$autocomplete"/>
+				</xsl:attribute>
+			</xsl:if>
 			<xsl:if test="$invalid">
 				<xsl:attribute name="class">
 					<xsl:value-of select="$members:invalid-class"/>
@@ -82,6 +88,7 @@
 	<xsl:param name="value"/>
 	<xsl:param name="id"/>
 	<xsl:param name="mode"/>
+	<xsl:param name="autocomplete"/>
 		<xsl:choose>
 			<xsl:when test="$mode='login'">
 				<xsl:call-template name="members:input">
@@ -91,6 +98,11 @@
 					<xsl:with-param name="id" select="$id"/>
 					<xsl:with-param name="field" select="'password'"/>
 					<xsl:with-param name="field-label" select="$members:config/data/fields/field[@type='password']/label/login"/>
+					<xsl:with-param name="autocomplete">
+						<xsl:if test="$autocomplete != ''">
+							<xsl:value-of select="$autocomplete"/>
+						</xsl:if>
+					</xsl:with-param>
 					<xsl:with-param name="xml-post-value">
 						<xsl:if test="$members:use-password-postback">
 							<xsl:value-of select="/data/events/*[name()=$event]/post-values/*[name()=$members:config/data/fields/field[@type='password']/@handle]"/>
@@ -108,6 +120,11 @@
 					<xsl:with-param name="field-label" select="$members:config/data/fields/field[@type='password']/label/*[name()=$mode]"/>
 					<xsl:with-param name="field-handle" select="concat($members:config/data/fields/field[@type='password']/@handle, '-password')"/>
 					<xsl:with-param name="name" select="concat('fields[', $members:config/data/fields/field[@type='password']/@handle, '][password]')"/>
+					<xsl:with-param name="autocomplete">
+						<xsl:if test="$autocomplete != ''">
+							<xsl:value-of select="$autocomplete"/>
+						</xsl:if>
+					</xsl:with-param>
 					<xsl:with-param name="xml-post-value">
 						<xsl:if test="$members:use-password-postback">
 							<xsl:value-of select="/data/events/*[name()=$event]/post-values/*[name()=$members:config/data/fields/field[@type='password']/@handle]/password"/>
@@ -123,6 +140,7 @@
 	<xsl:param name="value"/>
 	<xsl:param name="id"/>
 	<xsl:param name="mode"/>
+	<xsl:param name="autocomplete"/>
 	<xsl:call-template name="members:input">
 		<xsl:with-param name="type" select="'password'"/>
 		<xsl:with-param name="event" select="$event"/>
@@ -132,6 +150,11 @@
 		<xsl:with-param name="field-label" select="$members:config/data/fields/field[@type='password-confirm']/label/*[name()=$mode]"/>
 		<xsl:with-param name="field-handle" select="concat($members:config/data/fields/field[@type='password']/@handle, '-confirm')"/>
 		<xsl:with-param name="name" select="concat('fields[', $members:config/data/fields/field[@type='password']/@handle, '][confirm]')"/>
+		<xsl:with-param name="autocomplete">
+			<xsl:if test="$autocomplete != ''">
+				<xsl:value-of select="$autocomplete"/>
+			</xsl:if>
+		</xsl:with-param>
 		<xsl:with-param name="xml-post-value">
 			<xsl:if test="$members:use-password-postback">
 				<xsl:value-of select="/data/events/*[name()=$event]/post-values/*[name()=$members:config/data/fields/field[@type='password']/@handle]/confirm"/>

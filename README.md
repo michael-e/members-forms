@@ -214,6 +214,15 @@ At the time of writing I am not sure if all Members events support redirects, so
 
 You should keep in mind that POST values will not "survive" a redirect. So they will not show up in the target page's event XML.
 
+### Turning "autocomplete" off for Inputs
+
+When calling the `members:input`, `members:input-password` and `members:password-input-confirm` templates you can pass a parameter named `autocomplete` with a value of `off` to turn the browser's auto-completion off. This may be especially useful for password fields in a member's edit account form to stop a previously-saved password from being automatically inserted. For example:
+
+	<xsl:call-template name="members:input-password">
+		<xsl:with-param name="event" select="$event"/>
+		<xsl:with-param name="mode" select="'edit'"/>
+		<xsl:with-param name="autocomplete" select="'off'"/>
+	</xsl:call-template>
 
 ## Namespace
 
