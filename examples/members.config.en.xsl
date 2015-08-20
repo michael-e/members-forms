@@ -185,7 +185,7 @@
 					</messages>
 				</filter>
 			</event>
-			<event handle="members-reset-password" submit-value="Save Passsword">
+			<event handle="members-reset-password" submit-value="Save Password">
 				<messages>
 					<success><p>Your new password has been saved successfully.</p></success>
 					<error><p>Problems occurred while saving your new password.</p></error>
