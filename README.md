@@ -141,7 +141,7 @@ In addition it is possible to configure more than one filter for an event. Every
 
 ## Usage
 
-When configuration is done, import the template files in your pages and call the form templates from within your page template. Here are the code snippets (assumed that you have moved the example files to the root of your `uitlities` folder):
+When configuration is done, import the template files in your pages and call the form templates from within your page template. Here are the code snippets (assumed that you have moved the example files to the root of your `utilities` folder):
 
 	<xsl:import href="../utilities/members.form-register.xsl"/>
 	<xsl:call-template name="members-form-register"/>
