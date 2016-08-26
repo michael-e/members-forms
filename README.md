@@ -180,7 +180,7 @@ The above will output:
 
 	<div class="input">
 	    <label for="some-special-id">Username</label>
-	    <input type="text" id="some-special-id" name="fields[username]" />
+	    <input type="text" id="some-special-id" name="fields[username]"/>
 	</div>
 
 
@@ -197,7 +197,7 @@ Submit inputs will not have an ID by default. However, you can set an ID in your
 The above will result in the following output:
 
 	<div class="input submit">
-	  <input type="submit" name="member-action[login]" value="Login" id="master-monster-submit-button" />
+	  <input type="submit" name="member-action[login]" value="Login" id="master-monster-submit-button"/>
 	</div>
 
 
@@ -233,102 +233,102 @@ These XSLT utilities are based on a precise analysis of the Members extension's 
 
 Activate Account
 
-	<username type="invalid" message="Member not found." label="USERNAME" />
-	<email type="invalid" message="Member not found." label="EMAIL" />
-	<activation type="missing" message="ACTIVATION is a required field." label="ACTIVATION" />
-	<activation type="invalid" message="Activation error. Code was invalid or has expired." label="ACTIVATION" />
-	<activation type="invalid" message="Member is not activated." label="ACTIVATION" />
-	<error type="invalid" message="No Activation field found." />
-	<error type="invalid" message="No Identity field found." />
+	<username type="invalid" message="Member not found." label="USERNAME"/>
+	<email type="invalid" message="Member not found." label="EMAIL"/>
+	<activation type="missing" message="ACTIVATION is a required field." label="ACTIVATION"/>
+	<activation type="invalid" message="Activation error. Code was invalid or has expired." label="ACTIVATION"/>
+	<activation type="invalid" message="Member is not activated." label="ACTIVATION"/>
+	<error type="invalid" message="No Activation field found."/>
+	<error type="invalid" message="No Identity field found."/>
 
 Regenerate Activation Code
 
-	<username type="invalid" message="Member not found." label="USERNAME" />
-	<email type="invalid" message="Member not found." label="EMAIL" />
-	<activation type="invalid" message="Member is already activated." label="ACTIVATION" />
-	<error type="invalid" message="No Activation field found." />
-	<error type="invalid" message="No Identity field found." />
+	<username type="invalid" message="Member not found." label="USERNAME"/>
+	<email type="invalid" message="Member not found." label="EMAIL"/>
+	<activation type="invalid" message="Member is already activated." label="ACTIVATION"/>
+	<error type="invalid" message="No Activation field found."/>
+	<error type="invalid" message="No Identity field found."/>
 
 
 Generate Recovery Code
 
-	<username type="missing" message="USERNAME is a required field." label="USERNAME" />
-	<username type="invalid" message="Member not found." label="USERNAME" />
-	<email type="missing" message="EMAIL is a required field." label="EMAIL" />
-	<email type="invalid" message="Member not found." label="EMAIL" />
-	<error type="invalid" message="No Identity field found." />
+	<username type="missing" message="USERNAME is a required field." label="USERNAME"/>
+	<username type="invalid" message="Member not found." label="USERNAME"/>
+	<email type="missing" message="EMAIL is a required field." label="EMAIL"/>
+	<email type="invalid" message="Member not found." label="EMAIL"/>
+	<error type="invalid" message="No Identity field found."/>
 	<error type="invalid" message="You cannot generate a recovery code while being logged in."/>
 
 Reset Password
 
-	<username type="invalid" message="Member not found." label="USERNAME" />
-	<email type="invalid" message="Member not found." label="EMAIL" />
-	<password type="missing" message="PASSWORD is a required field." label="PASSWORD" />
-	<password type="invalid" message="PASSWORD is too short. It must be at least CONFIGURED characters." label="PASSWORD" />
-	<password type="invalid" message="PASSWORD is not strong enough." label="PASSWORD" />
-	<password type="invalid" message="PASSWORD confirmation does not match." label="PASSWORD" />
-	<password type="invalid" message="No recovery code found." label="PASSWORD" />
-	<error type="invalid" message="No Identity field found." />
+	<username type="invalid" message="Member not found." label="USERNAME"/>
+	<email type="invalid" message="Member not found." label="EMAIL"/>
+	<password type="missing" message="PASSWORD is a required field." label="PASSWORD"/>
+	<password type="invalid" message="PASSWORD is too short. It must be at least CONFIGURED characters." label="PASSWORD"/>
+	<password type="invalid" message="PASSWORD is not strong enough." label="PASSWORD"/>
+	<password type="invalid" message="PASSWORD confirmation does not match." label="PASSWORD"/>
+	<password type="invalid" message="No recovery code found." label="PASSWORD"/>
+	<error type="invalid" message="No Identity field found."/>
 	<error type="invalid" message="No Authentication field found."/>
 
 New/Edit
 
 	<message>Entry encountered errors when saving.</message>
-	<username label="USERNAME" type="missing" message="USERNAME is a required field." />
-	<username label="USERNAME" type="invalid" message="USERNAME is already taken." />
-	<username label="USERNAME" type="invalid" message="USERNAME contains invalid characters." />
-	<email label="EMAIL" type="missing" message="EMAIL is a required field." />
-    <email label="EMAIL" type="invalid" message="EMAIL is already taken." />
-	<email label="EMAIL" type="invalid" message="EMAIL contains invalid characters." />
-	<password label="PASSWORD" type="missing" message="PASSWORD is a required field." />
-	<password label="PASSWORD" type="invalid" message="PASSWORD is too short. It must be at least CONFIGURED characters." />
-	<password label="PASSWORD" type="invalid" message="PASSWORD is not strong enough." />
+	<username label="USERNAME" type="missing" message="USERNAME is a required field."/>
+	<username label="USERNAME" type="invalid" message="USERNAME is already taken."/>
+	<username label="USERNAME" type="invalid" message="USERNAME contains invalid characters."/>
+	<email label="EMAIL" type="missing" message="EMAIL is a required field."/>
+    <email label="EMAIL" type="invalid" message="EMAIL is already taken."/>
+	<email label="EMAIL" type="invalid" message="EMAIL contains invalid characters."/>
+	<password label="PASSWORD" type="missing" message="PASSWORD is a required field."/>
+	<password label="PASSWORD" type="invalid" message="PASSWORD is too short. It must be at least CONFIGURED characters."/>
+	<password label="PASSWORD" type="invalid" message="PASSWORD is not strong enough."/>
 
 Member Login Info (pseudo event)
 
-	<username type="missing" message="USERNAME is a required field." label="USERNAME" />
-	<email type="missing" message="EMAIL is a required field." label="EMAIL" />
-	<password type="missing" message="PASSWORD is a required field." label="PASSWORD" />
-	<password type="invalid" message="Invalid PASSWORD." label="PASSWORD" />
-	<activation type="invalid" message="Member is not activated." label="ACTIVATION" />
+	<username type="missing" message="USERNAME is a required field." label="USERNAME"/>
+	<email type="missing" message="EMAIL is a required field." label="EMAIL"/>
+	<password type="missing" message="PASSWORD is a required field." label="PASSWORD"/>
+	<password type="invalid" message="Invalid PASSWORD." label="PASSWORD"/>
+	<activation type="invalid" message="Member is not activated." label="ACTIVATION"/>
 
 
 ### Errors per Field
 
 Password
 
-	<password label="PASSWORD" type="missing" message="PASSWORD is a required field." />
-	<password label="PASSWORD" type="invalid" message="PASSWORD is too short. It must be at least CONFIGURED characters." />
-	<password label="PASSWORD" type="invalid" message="PASSWORD is not strong enough." />
-	<password label="PASSWORD" type="invalid" message="PASSWORD confirmation does not match." />
-	<password label="PASSWORD" type="invalid" message="Invalid PASSWORD." />
-	<password label="PASSWORD" type="invalid" message="No recovery code found." />
+	<password label="PASSWORD" type="missing" message="PASSWORD is a required field."/>
+	<password label="PASSWORD" type="invalid" message="PASSWORD is too short. It must be at least CONFIGURED characters."/>
+	<password label="PASSWORD" type="invalid" message="PASSWORD is not strong enough."/>
+	<password label="PASSWORD" type="invalid" message="PASSWORD confirmation does not match."/>
+	<password label="PASSWORD" type="invalid" message="Invalid PASSWORD."/>
+	<password label="PASSWORD" type="invalid" message="No recovery code found."/>
 
 Username
 
-	<username label="USERNAME" type="missing" message="USERNAME is a required field." />
-	<username label="USERNAME" type="invalid" message="USERNAME is already taken." />
-	<username label="USERNAME" type="invalid" message="USERNAME contains invalid characters." />
-	<username label="USERNAME" type="invalid" message="Member not found." />
+	<username label="USERNAME" type="missing" message="USERNAME is a required field."/>
+	<username label="USERNAME" type="invalid" message="USERNAME is already taken."/>
+	<username label="USERNAME" type="invalid" message="USERNAME contains invalid characters."/>
+	<username label="USERNAME" type="invalid" message="Member not found."/>
 
 Email
 
-	<email label="EMAIL" type="missing" message="EMAIL is a required field." />
-    <email label="EMAIL" type="invalid" message="EMAIL is already taken." />
-	<email label="EMAIL" type="invalid" message="EMAIL contains invalid characters." />
-	<email label="EMAIL" type="invalid" message="Member not found." />
+	<email label="EMAIL" type="missing" message="EMAIL is a required field."/>
+    <email label="EMAIL" type="invalid" message="EMAIL is already taken."/>
+	<email label="EMAIL" type="invalid" message="EMAIL contains invalid characters."/>
+	<email label="EMAIL" type="invalid" message="Member not found."/>
 
 Activation
 
-	<activation label="ACTIVATION" type="missing" message="ACTIVATION is a required field." />
-	<activation label="ACTIVATION" type="invalid" message="Activation error. Code was invalid or has expired." />
-	<activation label="ACTIVATION" type="invalid" message="Member is already activated." />
-	<activation label="ACTIVATION" type="invalid" message="Member is not activated." />
+	<activation label="ACTIVATION" type="missing" message="ACTIVATION is a required field."/>
+	<activation label="ACTIVATION" type="invalid" message="Activation error. Code was invalid or has expired."/>
+	<activation label="ACTIVATION" type="invalid" message="Member is already activated."/>
+	<activation label="ACTIVATION" type="invalid" message="Member is not activated."/>
 
 Generic (no dedicated form field)
 
-	<error type="invalid" message="No Activation field found." />
-	<error type="invalid" message="No Identity field found." />
+	<error type="invalid" message="No Activation field found."/>
+	<error type="invalid" message="No Identity field found."/>
 	<error type="invalid" message="No Authentication field found."/>
 	<error type="invalid" message="You cannot generate a recovery code while being logged in."/>
 
