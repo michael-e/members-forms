@@ -37,6 +37,11 @@ Members Forms can be downloaded from Github: <http://github.com/michael-e/member
 
 ## Release Notes
 
+[1.3]
+
+- Fixes
+- Allow custom classes for submit inputs
+
 [1.2]
 
 - Added hidden input elements for Members section ID to example forms. (The Members extension works with multiple sections now.)
