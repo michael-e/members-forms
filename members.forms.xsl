@@ -172,6 +172,7 @@
 <xsl:template name="members:input-submit">
 	<xsl:param name="event"/>
 	<xsl:param name="name" select="concat('action[', $event, ']')"/>
+	<xsl:param name="class"/>
 	<xsl:param name="id"/>
 	<xsl:param name="value" select="$members:config/data/events/event[@handle = $event]/@submit-value"/>
 	<xsl:param name="redirect"/>
@@ -189,6 +190,11 @@
 			<xsl:if test="$id != ''">
 				<xsl:attribute name="id">
 					<xsl:value-of select="$id"/>
+				</xsl:attribute>
+			</xsl:if>
+			<xsl:if test="$class != ''">
+				<xsl:attribute name="class">
+					<xsl:value-of select="$class"/>
 				</xsl:attribute>
 			</xsl:if>
 		</input>
