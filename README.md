@@ -81,6 +81,7 @@ Now you can build your first Members Forms page (a simple login page):
 
 (Try it with missing or invalid values as well.)
 
+
 ## Configuration
 
 If you look at the example files (the English configuration file and the German version), you will see that you are free to customize only a little (EN) or really a lot (DE).
@@ -164,7 +165,6 @@ When configuration is done, import the template files in your pages and call the
 	<xsl:import href="../utilities/members.form-reset-password.xsl"/>
 	<xsl:call-template name="members-form-reset-password"/>
 
-
 ### Overriding Auto-generated IDs
 
 If you add **two or more forms** to the same page, ID clashes may occur due to input field IDs being auto-generated using the naming scheme `concat('fields-', $field-handle)`.
@@ -183,7 +183,6 @@ The above will output:
 	    <input type="text" id="some-special-id" name="fields[username]"/>
 	</div>
 
-
 ### Setting an ID for Input Type "submit"
 
 Submit inputs will not have an ID by default. However, you can set an ID in your template, e.g.:
@@ -199,7 +198,6 @@ The above will result in the following output:
 	<div class="input submit">
 	  <input type="submit" name="member-action[login]" value="Login" id="master-monster-submit-button"/>
 	</div>
-
 
 ### Using Redirect Parameters
 
@@ -292,7 +290,6 @@ Member Login Info (pseudo event)
 	<password type="invalid" message="Invalid PASSWORD." label="PASSWORD"/>
 	<activation type="invalid" message="Member is not activated." label="ACTIVATION"/>
 
-
 ### Errors per Field
 
 Password
@@ -331,7 +328,6 @@ Generic (no dedicated form field)
 	<error type="invalid" message="No Identity field found."/>
 	<error type="invalid" message="No Authentication field found."/>
 	<error type="invalid" message="You cannot generate a recovery code while being logged in."/>
-
 
 ### Event XML Post Values
 
