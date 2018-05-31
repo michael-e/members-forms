@@ -15,7 +15,7 @@
 		<xsl:with-param name="event" select="$event"/>
 	</xsl:call-template>
 
-	<form action="" method="post">
+	<form action="{concat(/data/params/current-url, '/')}" method="post">
 		<div>
 			<!-- Use the ID of your current Members section! -->
 			<input type="hidden" name="members-section-id" value="99"/>
