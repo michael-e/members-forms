@@ -169,7 +169,7 @@
 			</event>
 			<event handle="members-edit" submit-value="Daten speichern">
 				<messages>
-					<success><p>Die Kontodaten wurden gespeichert.</p></success>
+					<success><p>Der Account wurde gespeichert.</p></success>
 					<error><p>Probleme sind aufgetreten.</p></error>
 				</messages>
 				<filter handle="permission">
@@ -179,7 +179,7 @@
 					</messages>
 				</filter>
 			</event>
-			<event handle="members-activate-account" submit-value="Konto aktivieren">
+			<event handle="members-activate-account" submit-value="Account aktivieren">
 				<messages>
 					<success><p>Die Aktivierung war erfolgreich.</p></success>
 					<error><p>Probleme sind aufgetreten.</p></error>
