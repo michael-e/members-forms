@@ -36,7 +36,7 @@
     </xsl:variable>
     <!-- Check if the field's configuration contains an element with the same message attribute value as found in the event XML response. The name of the node does not matter (may be <error/> as well). -->
     <xsl:variable name="invalid" select="boolean(/data/events/*[name() = $event]/*/@message = $members:config/data/fields/field[@type = $field]/errors/*/@message)"/>
-    <div class="input">
+    <div class="input input_{$type}">
       <label for="{$final-id}">
         <xsl:if test="$invalid">
           <xsl:attribute name="class">
@@ -169,7 +169,7 @@
     <xsl:param name="value" select="$members:config/data/events/event[@handle = $event]/@submit-value"/>
     <xsl:param name="redirect"/>
     <xsl:param name="accesskey"/>
-    <div class="input submit">
+    <div class="input input_submit">
       <xsl:if test="$redirect != ''">
         <input type="hidden" name="redirect" value="{$redirect}"/>
       </xsl:if>
@@ -223,7 +223,7 @@
       </xsl:choose>
     </xsl:param>
     <xsl:if test="$message != ''">
-      <div class="validation-summary event {$result}">
+      <div class="validation-summary validation-summary_{$result}">
         <xsl:apply-templates select="exsl:node-set($message)" mode="members:html-node"/>
         <xsl:if test="*[@message]">
           <ul>
@@ -282,7 +282,7 @@
       </xsl:choose>
     </xsl:param>
     <xsl:if test="$message != ''">
-      <div class="validation-summary filter {$result}">
+      <div class="validation-summary validation-summary_{$result}">
         <xsl:apply-templates select="exsl:node-set($message)" mode="members:html-node"/>
       </div>
     </xsl:if>
