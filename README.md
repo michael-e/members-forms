@@ -191,7 +191,7 @@ To solve this, version 1.1 of Members Forms introduced the ability to **override
 
 The above will output:
 
-	<div class="input">
+	<div class="input input_text">
 	    <label for="some-special-id">Username</label>
 	    <input type="text" id="some-special-id" name="fields[username]"/>
 	</div>
@@ -208,7 +208,7 @@ Submit inputs will not have an ID by default. However, you can set an ID in your
 
 The above will result in the following output:
 
-	<div class="input submit">
+	<div class="input input_submit">
 	  <input type="submit" name="member-action[login]" value="Login" id="master-monster-submit-button"/>
 	</div>
 
