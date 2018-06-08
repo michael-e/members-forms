@@ -37,6 +37,10 @@ Members Forms can be downloaded from Github: <http://github.com/michael-e/member
 
 ## Release Notes
 
+[1.4]
+
+- Change formatting (more XML-ish)
+
 [1.3]
 
 - Fixes
